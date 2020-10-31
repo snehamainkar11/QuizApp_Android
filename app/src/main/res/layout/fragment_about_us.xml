@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About_us">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBkColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="295dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="60dp"
+            android:text="Instructions**"
+            android:textAlignment="center"
+            android:textColor="@color/signupColor"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:text="Total number of questions : 20."
+            android:textAlignment="textStart"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="30dp"
+            android:text="Time alloted : 30 minutes."
+            android:textAlignment="textStart"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginLeft="30dp"
+            android:text="Each question carry 1 mark, no negative marks."
+            android:textAlignment="textStart"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</FrameLayout>

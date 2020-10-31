@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/loginBkColor"
+    android:backgroundTint="#D1E3F4"
+    tools:context=".QuestionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#0158A5"
+        app:layout_constraintBottom_toTopOf="@+id/options_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/no_indicator"
+            android:layout_width="129dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center|left"
+            android:text="5/10"
+            android:textAlignment="center"
+            android:textColor="#F3F5F6"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/bookmarkBtn" />
+
+        <TextView
+            android:id="@+id/txtTimer"
+            android:layout_width="189dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center|left"
+            android:text="Timer"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/no_indicator"
+            tools:ignore="NotSibling" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bookmarkBtn"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="4dp"
+            android:clickable="true"
+            app:backgroundTint="@android:color/holo_green_dark"
+            app:layout_constraintBottom_toTopOf="@+id/options_container"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+            app:srcCompat="@drawable/bookmark_border" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtquestion"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/category_bg"
+        android:ems="10"
+        android:gravity="top"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:text="Question"
+        android:textAlignment="textStart"
+        android:textColor="#040303"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/options_container"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_marginBottom="80dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnOption1"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#7DB6EF"
+            android:fontFamily="sans-serif"
+            android:stateListAnimator="@anim/fragment_open_enter"
+            android:text="Option1"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnOption2"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#7DB6EF"
+            android:fontFamily="sans-serif"
+            android:stateListAnimator="@anim/fragment_open_enter"
+            android:text="Option2"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnOption3"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#7DB6EF"
+            android:fontFamily="sans-serif"
+            android:stateListAnimator="@anim/fragment_open_enter"
+            android:text="Option3"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnOption4"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#7DB6EF"
+            android:fontFamily="sans-serif"
+            android:text="Option4"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="151dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="28dp"
+        android:alpha="0.7"
+        android:background="@drawable/shapelogin"
+        android:backgroundTint="#0676E8"
+        android:enabled="false"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/options_container" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
