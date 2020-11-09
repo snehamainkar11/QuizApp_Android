@@ -35,7 +35,6 @@ import java.util.UUID;
 
 public class ResultActivity extends AppCompatActivity {
     TextView score, total;
-    Button button;
     Toolbar toolbar;
     String titlename;
     int sc = 0;
@@ -51,13 +50,12 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        Toolbar toolbar = findViewById(R.id.tb1);
+        toolbar = findViewById(R.id.tb1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("My Score");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         score = findViewById(R.id.score);
-        button = findViewById(R.id.submit);
         total = findViewById(R.id.total);
         titlename = String.valueOf(getIntent().getStringExtra("titlename"));
         score.setText(String.valueOf(getIntent().getIntExtra("score", 0)));
