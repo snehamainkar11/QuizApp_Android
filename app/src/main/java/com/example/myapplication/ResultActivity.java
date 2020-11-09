@@ -35,7 +35,6 @@ import java.util.UUID;
 
 public class ResultActivity extends AppCompatActivity {
     TextView score, total;
-    RatingBar ratingbar;
     Button button;
     Toolbar toolbar;
     String titlename;
@@ -59,7 +58,6 @@ public class ResultActivity extends AppCompatActivity {
 
         score = findViewById(R.id.score);
         button = findViewById(R.id.submit);
-        ratingbar = findViewById(R.id.ratingBar);
         total = findViewById(R.id.total);
         titlename = String.valueOf(getIntent().getStringExtra("titlename"));
         score.setText(String.valueOf(getIntent().getIntExtra("score", 0)));
@@ -93,18 +91,13 @@ public class ResultActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            if(myRef.child("Score").child(user.getUid()).child("category").equals(titlename))
-                            {
-                            checkScore();
-                            }
-                            else {
+                            if (myRef.child("Score").child(user.getUid()).child("category").equals(titlename)) {
+                                checkScore();
+                            } else {
                                 list.add(new ScoreData(titlename.toString(), Integer.parseInt(String.valueOf(sc)), Integer.parseInt(total.getText().toString())));
                                 Toast.makeText(ResultActivity.this, "Saved", Toast.LENGTH_SHORT).show();
                             }
-                        }
-                        else
-
-                        {
+                        } else {
 
                             Toast.makeText(ResultActivity.this, "Failed to store", Toast.LENGTH_SHORT).show();
 
@@ -113,19 +106,8 @@ public class ResultActivity extends AppCompatActivity {
 
                     }
                 });
-
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                loading.show();
-                String rating = String.valueOf(ratingbar.getRating());
-                Toast.makeText(getApplicationContext(), "You give us " + rating + " Thanks for Rating", Toast.LENGTH_LONG).show();
-                finish();
-            }
-
-        });
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

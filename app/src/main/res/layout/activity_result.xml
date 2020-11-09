@@ -88,7 +88,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-
     <TextView
         android:id="@+id/title6"
         android:layout_width="150dp"
@@ -99,12 +98,6 @@
         android:textColor="@color/loginBkColor"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
 </LinearLayout>
 
     <Button
