@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:ignore="ExtraText">
-
     <TextView
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         android:padding="8dp"
         android:text="Question"
         android:textColor="#673AB7" />
-
     <TextView
         android:id="@+id/answer"
         android:layout_width="match_parent"
