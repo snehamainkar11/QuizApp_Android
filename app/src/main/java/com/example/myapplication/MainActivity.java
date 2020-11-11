@@ -43,9 +43,7 @@ public class MainActivity extends Activity {
 
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null){
-            //close this activity
             finish();
-            //opening profile activity
             startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
             finish();
         }

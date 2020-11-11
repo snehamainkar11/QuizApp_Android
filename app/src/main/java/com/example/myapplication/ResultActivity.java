@@ -1,24 +1,18 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
+import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +21,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +28,7 @@ import java.util.UUID;
 
 public class ResultActivity extends AppCompatActivity {
     TextView score, total;
+    Button btnBack;
     Toolbar toolbar;
     String titlename;
     int sc = 0;
@@ -45,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
     final String id = UUID.randomUUID().toString();
     final HashMap<String, Object> map = new HashMap<>();
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +71,22 @@ public class ResultActivity extends AppCompatActivity {
 
             }
         });
-*/
+ back1=findViewById(R.id.back);
+       back1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Toast.makeText(ResultActivity.this, "Bye Bye", Toast.LENGTH_SHORT).show();
+           }
+       });
+        */
+        btnBack=findViewById(R.id.btn_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View V) {
+                finish();
+            }
+        });
+
         map.put("category", titlename.toString());
         map.put("result", Integer.parseInt(score.getText().toString()));
         map.put("total", Integer.parseInt(total.getText().toString()));
@@ -115,10 +124,6 @@ public class ResultActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
-
 public void checkScore(){
     myRef.child("Score").child( FirebaseAuth.getInstance().getCurrentUser().getUid()).orderByChild("category").equalTo(titlename.toString())
             .addValueEventListener(new ValueEventListener() {
@@ -144,5 +149,4 @@ public void checkScore(){
             });
 
 }
-
 }
