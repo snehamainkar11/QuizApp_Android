@@ -39,6 +39,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -135,7 +136,7 @@ public class ProfileFragment extends Fragment {
 
     private void showUser(final EditText uname, final EditText usremail, final EditText usrcontact,final ImageView profile) {
         mDatabaseReference.orderByChild("userName").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
+                .addValueEventListener(new ValueEventListener() {
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -145,12 +146,14 @@ public class ProfileFragment extends Fragment {
                             uname.setText(users.getName().toString());
                             usremail.setText(users.getUserName().toString());
                             usrcontact.setText(users.getContact().toString());
-                            Glide.with(getContext()).load(users.getUrl()).into(profile);
+                            try {
+                                Glide.with(getContext()).load(users.getUrl()).into(profile);
+                            }
+                             catch (Exception e){
+                                Glide.with(getContext()).load(R.drawable.user_profile).into(profile);
 
-
-                        }
-
-
+                            }
+                      }
                     }
 
                     @Override
@@ -170,7 +173,13 @@ public class ProfileFragment extends Fragment {
                         edtData.getRef().child("name").setValue(name1);
                         edtData.getRef().child("userName").setValue(email1);
                         edtData.getRef().child("contact").setValue(contact1);
-                        edtData.getRef().child("url").setValue(""+urls);
+                            try {
+                                edtData.getRef().child("url").setValue(""+urls);
+                            }
+                            catch (Exception e){
+                                Glide.with(getContext()).load(R.drawable.user_profile).into(imgProfile);
+
+                            }
 
                     }
                     Toast.makeText(getContext(),"Profile Updated" ,Toast.LENGTH_LONG).show();
