@@ -177,7 +177,7 @@ public class ProfileFragment extends Fragment {
                                 edtData.getRef().child("url").setValue(""+urls);
                             }
                             catch (Exception e){
-                                Glide.with(getContext()).load(R.drawable.user_profile).into(imgProfile);
+                                Toast.makeText(getContext(),"Image not uploaded" ,Toast.LENGTH_LONG).show();
 
                             }
 
