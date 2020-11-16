@@ -26,18 +26,7 @@
             android:layout_marginLeft="30dp"
             android:fontFamily="sans-serif"
             android:foregroundTint="#3F51B5"
-            android:text="Total number of questions : 10."
-            android:textAlignment="textStart"
-            android:textColor="#9C27B0"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="367dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="sans-serif"
-            android:foregroundTint="#3F51B5"
-            android:text="Time alloted : 30 minutes."
+            android:text="Time alloted : 10 minutes."
             android:textAlignment="textStart"
             android:textColor="#9C27B0"
             android:textSize="20sp" />
