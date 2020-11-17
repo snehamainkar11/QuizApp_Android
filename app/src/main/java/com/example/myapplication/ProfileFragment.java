@@ -173,13 +173,7 @@ public class ProfileFragment extends Fragment {
                         edtData.getRef().child("name").setValue(name1);
                         edtData.getRef().child("userName").setValue(email1);
                         edtData.getRef().child("contact").setValue(contact1);
-                            try {
-                                edtData.getRef().child("url").setValue(""+urls);
-                            }
-                            catch (Exception e){
-                                Toast.makeText(getContext(),"Image not uploaded" ,Toast.LENGTH_LONG).show();
-
-                            }
+                        edtData.getRef().child("url").setValue(""+urls);
 
                     }
                     Toast.makeText(getContext(),"Profile Updated" ,Toast.LENGTH_LONG).show();
